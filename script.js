@@ -19,3 +19,9 @@ const scrollDownButton = document.getElementById('scroll-down');
 scrollDownButton.addEventListener('click', () => {
     heroSection.scrollIntoView({ behavior: 'smooth' });
 });
+
+// Add event listener to hero background image
+const heroBackground = document.querySelector('.hero-background');
+heroBackground.addEventListener('click', () => {
+    heroSection.scrollIntoView({ behavior: 'smooth' });
+});
