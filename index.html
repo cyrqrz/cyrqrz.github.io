@@ -1,84 +1,107 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeCraft | Your IT Skills and Projects</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>My IT Résumé</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="hero">
-            <h1>Welcome to CodeCraft</h1>
-            <p>A showcase of my IT skills and projects</p>
-            <button id="scroll-down">Scroll Down</button>
-            <div class="hero-background">
-                <img src="hero-background.jpg" alt="Hero Background">
+        <div class="container">
+            <div class="profile-pic">
+                <img src="profile.jpg" alt="Your Name">
             </div>
-        </section>
-        <section id="skills">
-            <h2>My IT Skills</h2>
-            <ul>
-                <li>
-                    <h3>Programming Languages</h3>
-                    <ul>
-                        <li>JavaScript</li>
-                        <li>Python</li>
-                        <li>Java</li>
-                    </ul>
-                </li>
-                <li>
-                    <h3>Development Frameworks</h3>
-                    <ul>
-                        <li>React</li>
-                        <li>Angular</li>
-                        <li>Vue.js</li>
-                    </ul>
-                </li>
-                <li>
-                    <h3>Databases</h3>
-                    <ul>
-                        <li>MySQL</li>
-                        <li>MongoDB</li>
-                        <li>PostgreSQL</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-        <section id="projects">
-            <h2>My Projects</h2>
-            <ul>
-                <li>
-                    <h3>Project 1: Todo List App</h3>
-                    <p>A simple Todo List app built using React and Firebase</p>
-                    <button>View Live Demo</button>
-                </li>
-                <li>
-                    <h3>Project 2: Weather App</h3>
-                    <p>A weather app built using Python and OpenWeatherMap API</p>
-                    <button>View Live Demo</button>
-                </li>
-                <li>
-                    <h3>Project 3: Chatbot</h3>
-                    <p>A chatbot built using Node.js and Dialogflow</p>
-                    <button>View Live Demo</button>
-                </li>
-            </ul>
-        </section>
-    </main>
+            <div class="header-text">
+                <h1>Your Name</h1>
+                <p>Front-End Developer | IT Specialist</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Welcome to my résumé! I'm a passionate front-end developer with expertise in creating beautiful and functional websites. My experience spans various projects, and I'm always eager to learn and adapt to new challenges.</p>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-list">
+                <div class="skill">
+                    <h3>HTML</h3>
+                    <div class="skill-bar" data-skill="90%"></div>
+                </div>
+                <div class="skill">
+                    <h3>CSS</h3>
+                    <div class="skill-bar" data-skill="85%"></div>
+                </div>
+                <div class="skill">
+                    <h3>JavaScript</h3>
+                    <div class="skill-bar" data-skill="80%"></div>
+                </div>
+                <!-- Add more skills as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project">
+                    <img src="project1.jpg" alt="Project 1">
+                    <h3>Project Title 1</h3>
+                    <p>Brief description of the project and the technologies used.</p>
+                </div>
+                <div class="project">
+                    <img src="project2.jpg" alt="Project 2">
+                    <h3>Project Title 2</h3>
+                    <p>Brief description of the project and the technologies used.</p>
+                </div>
+                <!-- Add more projects as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2023 CodeCraft</p>
+        <div class="container">
+            <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+        </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

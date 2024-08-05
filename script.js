@@ -1,27 +1,37 @@
-// script.js
-const heroSection = document.getElementById('hero');
-const skillsSection = document.getElementById('skills');
-const projectsSection = document.getElementById('projects');
+// Smooth Scrolling for Navigation Links
+document.querySelectorAll('nav ul li a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
 
-heroSection.addEventListener('click', () => {
-    heroSection.scrollIntoView({ behavior: 'smooth' });
+        const targetId = this.getAttribute('href');
+        document.querySelector(targetId).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    });
 });
 
-skillsSection.addEventListener('click', () => {
-    skillsSection.scrollIntoView({ behavior: 'smooth' });
+// Dynamic Skill Bar Animation
+document.addEventListener('DOMContentLoaded', () => {
+    const skillBars = document.querySelectorAll('.skill-bar');
+
+    skillBars.forEach(bar => {
+        const value = bar.getAttribute('data-skill');
+        bar.style.width = value;
+    });
 });
 
-projectsSection.addEventListener('click', () => {
-    projectsSection.scrollIntoView({ behavior: 'smooth' });
-});
+// Form Validation
+const form = document.querySelector('form');
+form.addEventListener('submit', function(event) {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
 
-const scrollDownButton = document.getElementById('scroll-down');
-scrollDownButton.addEventListener('click', () => {
-    heroSection.scrollIntoView({ behavior: 'smooth' });
-});
-
-// Add event listener to hero background image
-const heroBackground = document.querySelector('.hero-background');
-heroBackground.addEventListener('click', () => {
-    heroSection.scrollIntoView({ behavior: 'smooth' });
+    if (name === '' || email === '' || message === '') {
+        alert('Please fill in all fields.');
+        event.preventDefault();
+    } else {
+        alert('Message sent successfully!');
+    }
 });
