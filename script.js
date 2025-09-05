@@ -11,27 +11,38 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
     });
 });
 
-// Dynamic Skill Bar Animation
+// On load helpers
 document.addEventListener('DOMContentLoaded', () => {
-    const skillBars = document.querySelectorAll('.skill-bar');
+    // Set current year in footer
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    skillBars.forEach(bar => {
-        const value = bar.getAttribute('data-skill');
-        bar.style.width = value;
-    });
-});
+    // Theme toggle (default dark)
+    const root = document.documentElement;
+    const btn = document.getElementById('theme-toggle');
+    const applyTheme = (theme) => {
+        if (theme === 'light') {
+            root.setAttribute('data-theme', 'light');
+            if (btn) btn.setAttribute('aria-pressed', 'true');
+        } else {
+            root.removeAttribute('data-theme');
+            if (btn) btn.setAttribute('aria-pressed', 'false');
+        }
+    };
 
-// Form Validation
-const form = document.querySelector('form');
-form.addEventListener('submit', function(event) {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+    let stored = null;
+    try { stored = localStorage.getItem('theme'); } catch {}
+    const initial = stored === 'light' ? 'light' : 'dark'; // default dark
+    applyTheme(initial);
 
-    if (name === '' || email === '' || message === '') {
-        alert('Please fill in all fields.');
-        event.preventDefault();
-    } else {
-        alert('Message sent successfully!');
+    if (btn) {
+        btn.addEventListener('click', () => {
+            const isLight = root.getAttribute('data-theme') === 'light';
+            const next = isLight ? 'dark' : 'light';
+            applyTheme(next);
+            try { localStorage.setItem('theme', next); } catch {}
+        });
     }
 });
+
+// No contact form: using mailto links for contact.

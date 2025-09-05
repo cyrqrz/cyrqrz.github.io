@@ -3,102 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My IT Résumé</title>
+    <title>Portfolio — Cyro Queiroz</title>
+    <meta name="description" content="Developer portfolio of Cyro Queiroz — projects, about, and contact.">
+    <meta property="og:title" content="Cyro Queiroz — Portfolio">
+    <meta property="og:description" content="Projects, about, and contact.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="profile-pic">
-                <img src="profile.jpg" alt="Your Name">
-            </div>
-            <div class="header-text">
-                <h1>Your Name</h1>
-                <p>Front-End Developer | IT Specialist</p>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="#hero" aria-label="Home">Cyro Queiroz</a>
+            <nav class="primary-nav" aria-label="Primary">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme" aria-pressed="false">
+                <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.8 1.42-1.42zm10.48 14.32l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM12 4V1h-1v3h1zm0 19v-3h-1v3h1zM4 12H1v1h3v-1zm19 0h-3v1h3v-1zM6.76 19.16l-1.42 1.42-1.79-1.8 1.41-1.41 1.8 1.79zM19.16 6.76l1.42-1.42 1.79 1.8-1.41 1.41-1.8-1.79zM12 7a5 5 0 100 10 5 5 0 000-10z"/></svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+            </button>
+            <div class="social">
+                <a href="https://github.com/cyrqrz" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22"><path fill="currentColor" d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.35-1.76-1.35-1.76-1.1-.76.08-.75.08-.75 1.22.09 1.86 1.25 1.86 1.25 1.08 1.85 2.84 1.31 3.53 1 .11-.78.42-1.31.76-1.62-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.46 11.46 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.23v3.3c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/cyro-queiroz-8953a9214/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22"><path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zm7.5 0h3.8v2h.06c.53-1 1.84-2.06 3.78-2.06 4.04 0 4.78 2.66 4.78 6.12V23h-4v-5.8c0-1.38-.02-3.16-1.93-3.16-1.94 0-2.24 1.51-2.24 3.06V23h-4V8.5z"/></svg>
+                </a>
+                <a href="mailto:queirozcyro@gmail.com" aria-label="Email" title="Email">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 2v.01L12 13 4 6.01V6h16ZM4 18V8.24l8 6.76 8-6.76V18H4Z"/></svg>
+                </a>
             </div>
         </div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <main>
+        <section id="hero" class="section hero">
+            <div class="container hero-inner">
+                <div class="hero-text">
+                    <h1>Cyro Queiroz</h1>
+                    <p class="lede">Full-Stack Developer crafting fast, accessible, and modern solutions.</p>
+                    <div class="cta-row">
+                        <a class="btn primary" href="#projects" style="color: #fff;">View Projects</a>
+                        <a class="btn ghost" href="mailto:queirozcyro@gmail.com">Email me</a>
+                    </div>
+                </div>
+                <!--    make the image fill the div            -->
+                <div class="hero-visual" aria-hidden="true" style="background-image: url('/public/me.png'); background-size: cover; background-position: center;"></div>
 
-    <section id="about" class="section">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>Welcome to my résumé! I'm a passionate front-end developer with expertise in creating beautiful and functional websites. My experience spans various projects, and I'm always eager to learn and adapt to new challenges.</p>
-        </div>
-    </section>
-
-    <section id="skills" class="section">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="skills-list">
-                <div class="skill">
-                    <h3>HTML</h3>
-                    <div class="skill-bar" data-skill="90%"></div>
-                </div>
-                <div class="skill">
-                    <h3>CSS</h3>
-                    <div class="skill-bar" data-skill="85%"></div>
-                </div>
-                <div class="skill">
-                    <h3>JavaScript</h3>
-                    <div class="skill-bar" data-skill="80%"></div>
-                </div>
-                <!-- Add more skills as needed -->
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="projects" class="section">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <div class="project">
-                    <img src="project1.jpg" alt="Project 1">
-                    <h3>Project Title 1</h3>
-                    <p>Brief description of the project and the technologies used.</p>
+        <section id="projects" class="section">
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-card__body">
+                            <h3>Titanium do Brasil</h3>
+                            <p>Institutional website for Titanium do Brasil, delivery in few days with zero infrastructure cost. Delivered from code to deploying.</p>
+                            <ul class="tags">
+                                <li>Typescript</li><li>Next.js</li><li>Cloudflare Pages + Workers</li><li>Resend API</li>
+                            </ul>
+                        </div>
+                        <div class="project-card__actions">
+                            <a class="btn small" href="https://titaniumdobrasil.com.br" target="_blank" rel="noopener">Live</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-card__body">
+                            <h3>Realtime AI Avatar</h3>
+                            <p>Interactive avatar with realtime multi-turn conversation. Develop as a POC for one of my clients.</p>
+                            <ul class="tags">
+                                <li>TypeScript</li><li>Vite</li><li>Python</li><li>FastAPI</li><li>Postgres</li><li>pgvector</li><li>Deepgram STT</li><li>HeyGen Avatars + Livekit</li><li>LLM's (OpenAI, Anthropic)</li>
+                            </ul>
+                        </div>
+                        <div class="project-card__actions">
+                            <a class="btn small" href="#" target="_blank" rel="noopener">Live</a>
+                            <a class="btn small ghost" href="https://github.com/cyrqrz/realtime-ai-avatar" target="_blank" rel="noopener">GitHub</a>
+                        </div>
+                    </article>
                 </div>
-                <div class="project">
-                    <img src="project2.jpg" alt="Project 2">
-                    <h3>Project Title 2</h3>
-                    <p>Brief description of the project and the technologies used.</p>
-                </div>
-                <!-- Add more projects as needed -->
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="section">
-        <div class="container">
-            <h2>Contact</h2>
-            <form>
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </section>
+        <section id="about" class="section">
+            <div class="container narrow">
+                <h2>About</h2>
+                <p>I’m a developer focused on creating accessible, maintainable, and performant interfaces. I enjoy working across the stack when needed and collaborating on clear, outcome-driven projects.</p>
+            </div>
+        </section>
 
-    <footer>
+        <section id="contact" class="section">
+            <div class="container narrow">
+                <h2>Contact</h2>
+                <p>Have an opportunity or idea? Reach out via email or find me on social.</p>
+                <div class="cta-row">
+                    <a class="btn primary" href="mailto:queirozcyro@gmail.com" style="color: #fff;">Email me</a>
+                    <div class="social inline">
+                        <a href="https://github.com/cyrqrz" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+                        <span aria-hidden="true">•</span>
+                        <a href="https://www.linkedin.com/in/cyro-queiroz-8953a9214/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+                        <span aria-hidden="true">•</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+            <p>&copy; <span id="year"></span> Cyro Queiroz</p>
         </div>
     </footer>
 
