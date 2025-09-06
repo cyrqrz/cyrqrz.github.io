@@ -11,6 +11,19 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
     });
 });
 
+// Smooth Scrolling for Buttons
+document.querySelectorAll('.btn').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        document.querySelector(targetId).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    });
+});
+
 // On load helpers
 document.addEventListener('DOMContentLoaded', () => {
     // Set current year in footer

@@ -365,6 +365,7 @@ body {
 /* Hero */
 .hero { padding: 72px 0; }
 .hero-inner { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; }
+.hero-text { margin-top: 100px; }
 .hero-text h1 { font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.1; }
 .hero-text .lede { margin-top: 12px; color: var(--muted); font-size: clamp(1rem, 1.4vw, 1.125rem); max-width: 60ch; }
 .hero-visual { height: 400px; border-radius: var(--radius); background: linear-gradient(135deg, var(--primary), #9d4edd 55%, #22c55e); filter: saturate(80%); box-shadow: var(--shadow); }
@@ -404,7 +405,7 @@ body {
 /* Responsive */
 @media (max-width: 800px) {
   .hero-inner { grid-template-columns: 1fr; }
-  .hero-visual { height: 140px; }
+  .hero-visual { height: 200px; }
 }
 
 /* Reduced motion */
@@ -417,3 +418,37 @@ body {
 .section#contact .cta-row { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
 .section#contact .social.inline { display: inline-flex; align-items: center; gap: 10px; }
 .section#contact .social.inline span { opacity: 0.6; }
+
+/* --- Fixes: Navbar and Light Mode Visibility --- */
+/* Ensure nav links are readable in light mode, overriding legacy white links */
+:root[data-theme="light"] nav ul li a { color: var(--text); }
+
+/* Scope modern header nav link colors so they don't inherit legacy white */
+.site-header nav ul { list-style: none; display: flex; align-items: center; gap: 16px; justify-content: flex-end; }
+.site-header nav ul li { margin: 0; }
+.site-header nav ul li a { color: var(--muted); background: transparent; }
+.site-header nav ul li a:hover { color: var(--text); background: transparent; }
+
+/* Mobile navbar improvements */
+@media (max-width: 800px) {
+  .site-header .header-inner { flex-wrap: wrap; gap: 8px; }
+  .site-header nav ul { overflow-x: auto; -webkit-overflow-scrolling: touch; gap: 10px; padding: 6px 0; flex-wrap: nowrap; justify-content: flex-start; }
+  .site-header nav ul li a { padding: 8px 10px; font-size: 0.95rem; }
+  /* Allow legacy nav to wrap if present */
+  nav ul { flex-wrap: wrap; }
+  nav ul li { margin: 6px 10px; }
+}
+
+/* Light mode content fixes (avoid white-on-white) */
+:root[data-theme="light"] .section h2 { color: #101114; }
+:root[data-theme="light"] .skill h3 { color: #101114; }
+:root[data-theme="light"] .project h3 { color: #101114; }
+:root[data-theme="light"] .project p { color: #334155; }
+
+/* Light mode form field visibility */
+:root[data-theme="light"] .form-group label { color: #334155; }
+:root[data-theme="light"] .form-group input,
+:root[data-theme="light"] .form-group textarea { background-color: #ffffff; color: #101114; border-color: #cbd5e1; }
+
+/* Ensure content isn't hidden under sticky header when navigating */
+.site-header + .section { scroll-margin-top: 64px; }
